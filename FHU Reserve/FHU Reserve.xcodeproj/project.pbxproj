@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7171DD0A1FBA549800B3E5FF /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD091FBA549800B3E5FF /* Room.swift */; };
 		71A33AEE1FB25A6900447232 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A33AED1FB25A6900447232 /* SearchViewController.swift */; };
 		71A4A7C71FAE72EA000C9A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4A7C61FAE72EA000C9A80 /* AppDelegate.swift */; };
 		71A4A7CB1FAE72EA000C9A80 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4A7CA1FAE72EA000C9A80 /* SecondViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7171DD091FBA549800B3E5FF /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		71A33AED1FB25A6900447232 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		71A4A7C31FAE72EA000C9A80 /* FHU Reserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Reserve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A4A7C61FAE72EA000C9A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				71A4A7C61FAE72EA000C9A80 /* AppDelegate.swift */,
 				71A4A7CA1FAE72EA000C9A80 /* SecondViewController.swift */,
 				71A4A7CC1FAE72EA000C9A80 /* Main.storyboard */,
+				7171DD091FBA549800B3E5FF /* Room.swift */,
 				71A33AED1FB25A6900447232 /* SearchViewController.swift */,
 				71A4A7CF1FAE72EA000C9A80 /* Assets.xcassets */,
 				71A4A7D11FAE72EA000C9A80 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				71A4A7CB1FAE72EA000C9A80 /* SecondViewController.swift in Sources */,
 				71A4A7C71FAE72EA000C9A80 /* AppDelegate.swift in Sources */,
+				7171DD0A1FBA549800B3E5FF /* Room.swift in Sources */,
 				71A33AEE1FB25A6900447232 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
