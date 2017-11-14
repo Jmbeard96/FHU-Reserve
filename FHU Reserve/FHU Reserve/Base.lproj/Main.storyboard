@@ -144,19 +144,61 @@
         <!--Available Times-->
         <scene sceneID="bCL-Sc-AWE">
             <objects>
-                <tableViewController title="Available Times" id="pgT-me-ymN" sceneMemberID="viewController">
+                <tableViewController title="Available Times" id="pgT-me-ymN" customClass="AvailableRoomsTableViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UwF-t2-nTg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" id="dCH-1V-ubG">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="130" id="dCH-1V-ubG" customClass="AvailableRoomTableViewCell" customModule="FHU_Reserve" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dCH-1V-ubG" id="etX-Vz-mAf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LTO-ad-8Ir">
+                                            <rect key="frame" x="15" y="14.5" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="8YO-aw-rEc"/>
+                                                <constraint firstAttribute="height" constant="100" id="LJE-g8-7Ja"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-eh-bsP">
+                                            <rect key="frame" x="123" y="14" width="131.5" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-xh-pGM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz6-Zm-5AT">
+                                                    <rect key="frame" x="0.0" y="34.5" width="39.5" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="txK-be-gX3"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="LTO-ad-8Ir" secondAttribute="bottom" constant="15" id="6OT-YC-3FF"/>
+                                        <constraint firstItem="Yc3-eh-bsP" firstAttribute="top" secondItem="etX-Vz-mAf" secondAttribute="top" constant="14" id="8S7-XF-t7s"/>
+                                        <constraint firstItem="Yc3-eh-bsP" firstAttribute="leading" secondItem="LTO-ad-8Ir" secondAttribute="trailing" constant="8" id="EaS-zF-rTq"/>
+                                        <constraint firstItem="LTO-ad-8Ir" firstAttribute="top" secondItem="etX-Vz-mAf" secondAttribute="top" constant="15" id="OcM-bL-in0"/>
+                                        <constraint firstAttribute="bottom" secondItem="Yc3-eh-bsP" secondAttribute="bottom" constant="55.5" id="ZHh-ne-hXk"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yc3-eh-bsP" secondAttribute="trailing" constant="86.5" id="mSu-Ux-QHO"/>
+                                        <constraint firstItem="LTO-ad-8Ir" firstAttribute="leading" secondItem="etX-Vz-mAf" secondAttribute="leading" constant="15" id="pJn-x7-e1h"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="roomImage" destination="LTO-ad-8Ir" id="yRW-7F-UJr"/>
+                                    <outlet property="roomNumber" destination="Kz6-Zm-5AT" id="2JV-tL-IzF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -167,7 +209,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi0-96-VyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="-661"/>
+            <point key="canvasLocation" x="1792.8" y="-661.61919040479768"/>
         </scene>
         <!--My Rooms-->
         <scene sceneID="wg7-f3-ORb">
