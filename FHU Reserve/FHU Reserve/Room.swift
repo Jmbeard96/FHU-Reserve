@@ -14,13 +14,15 @@ public class Room{
     var imageName: String?
     var amenities: [String]?
     var availableTimes: [Int]?
+    var capacity: Int?
     
-    init(roomNumber: Int, imageName: String, amenities: [String], availableTimes: [Int]) {
+    init(roomNumber: Int, imageName: String, amenities: [String], availableTimes: [Int], capacity: Int) {
         
         self.roomNumber = roomNumber
         self.imageName = imageName
         self.amenities = amenities
         self.availableTimes = availableTimes
+        self.capacity = capacity
     }
     
 }

@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var datePicker: UITextField!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
 }

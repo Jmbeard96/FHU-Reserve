@@ -18,72 +18,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbp-mW-o8b">
-                                <rect key="frame" x="58" y="468" width="267" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbp-mW-o8b">
+                                <rect key="frame" x="25" y="468" width="325" height="40"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.078431372549019607" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="pgT-me-ymN" kind="show" identifier="timeSearchSegue" id="6kN-9D-caN"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-v4-AeO">
-                                <rect key="frame" x="25" y="87" width="84" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-v4-AeO">
+                                <rect key="frame" x="25" y="89" width="81.5" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-64-iZn">
-                                <rect key="frame" x="94" y="172" width="187" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="1 - 2"/>
-                                    <segment title="3 - 4"/>
-                                    <segment title="5 - 6"/>
-                                </segments>
-                                <color key="tintColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="opH-uD-vnf">
-                                <rect key="frame" x="94" y="253" width="187" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="1 hour"/>
-                                    <segment title="2 hours"/>
-                                    <segment title="3 hours"/>
-                                </segments>
-                                <color key="tintColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mC2-h1-AJV">
-                                <rect key="frame" x="94" y="329" width="187" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iL-94-Y6g">
-                                <rect key="frame" x="146" y="218" width="82" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-92-DDZ">
-                                <rect key="frame" x="162" y="294" width="50" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX0-8p-IqF">
-                                <rect key="frame" x="114" y="137" width="146" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-WF-Ipc">
+                                <rect key="frame" x="25" y="146" width="200" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-t2-jUO">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX0-8p-IqF">
+                                                <rect key="frame" x="0.0" y="0.0" width="145.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-64-iZn">
+                                                <rect key="frame" x="0.0" y="37" width="200" height="29"/>
+                                                <segments>
+                                                    <segment title="1 - 2"/>
+                                                    <segment title="3 - 4"/>
+                                                    <segment title="5 - 6"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="NdN-JR-N9c"/>
+                                            <constraint firstAttribute="height" constant="65" id="PoU-ik-cWZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rPN-64-iZn" secondAttribute="trailing" id="oyA-n1-dkI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-bI-2Of">
+                                        <rect key="frame" x="0.0" y="92.5" width="200" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iL-94-Y6g">
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="opH-uD-vnf">
+                                                <rect key="frame" x="0.0" y="37" width="200" height="29"/>
+                                                <segments>
+                                                    <segment title="1 hour"/>
+                                                    <segment title="2 hours"/>
+                                                    <segment title="3 hours"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="Ifn-2e-Hhu"/>
+                                            <constraint firstAttribute="trailing" secondItem="opH-uD-vnf" secondAttribute="trailing" id="MYI-Bk-g6s"/>
+                                            <constraint firstAttribute="width" constant="200" id="YIm-kQ-UCG"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pq5-2s-3F9">
+                                        <rect key="frame" x="0.0" y="185" width="200" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-92-DDZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mC2-h1-AJV">
+                                                <rect key="frame" x="0.0" y="35" width="200" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="Dma-MU-Puw"/>
+                                            <constraint firstAttribute="width" constant="200" id="f8h-RA-C0y"/>
+                                            <constraint firstAttribute="trailing" secondItem="mC2-h1-AJV" secondAttribute="trailing" id="keB-ay-jNE"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="29j-VP-rs7"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.94162888600000005" green="0.94162888600000005" blue="0.94162888600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Kew-v4-AeO" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="25" id="2na-CY-GZH"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Kew-v4-AeO" secondAttribute="trailing" constant="268.5" id="JAb-Ua-vnN"/>
+                            <constraint firstItem="tbp-mW-o8b" firstAttribute="top" secondItem="kZe-WF-Ipc" secondAttribute="bottom" constant="72" id="VbP-W4-V7h"/>
+                            <constraint firstItem="kZe-WF-Ipc" firstAttribute="top" secondItem="Kew-v4-AeO" secondAttribute="bottom" constant="24.5" id="YiP-1i-SNu"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kZe-WF-Ipc" secondAttribute="trailing" constant="150" id="h1u-aD-cr9"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="tbp-mW-o8b" secondAttribute="trailing" constant="25" id="hJL-2V-hTV"/>
+                            <constraint firstItem="Kew-v4-AeO" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="25" id="iA3-ax-pa3"/>
+                            <constraint firstItem="tbp-mW-o8b" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="25" id="iCa-6e-TO2"/>
+                            <constraint firstItem="kZe-WF-Ipc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="25" id="nOe-bK-VsZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reserve Room" id="mXS-4H-MiH"/>
@@ -96,6 +140,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="-660.71964017991013"/>
+        </scene>
+        <!--Available Times-->
+        <scene sceneID="bCL-Sc-AWE">
+            <objects>
+                <tableViewController title="Available Times" id="pgT-me-ymN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UwF-t2-nTg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" id="dCH-1V-ubG">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dCH-1V-ubG" id="etX-Vz-mAf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pgT-me-ymN" id="ZVJ-kS-Kc5"/>
+                            <outlet property="delegate" destination="pgT-me-ymN" id="qoM-d7-tzD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yi0-96-VyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="-661"/>
         </scene>
         <!--My Rooms-->
         <scene sceneID="wg7-f3-ORb">
