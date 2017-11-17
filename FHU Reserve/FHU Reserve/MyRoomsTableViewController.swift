@@ -1,20 +1,15 @@
 //
-//  AvailableRoomsTableViewController.swift
+//  MyRoomsTableViewController.swift
 //  FHU Reserve
 //
-//  Created by Jeremy Beard on 11/14/17.
+//  Created by Jeremy Beard on 11/17/17.
 //  Copyright © 2017 Freed Hardeman University. All rights reserved.
 //
 
 import UIKit
 
-class AvailableRoomsTableViewController: UITableViewController {
+class MyRoomsTableViewController: UITableViewController {
 
-    var roomsForTimes = RoomSet.roomsForTimes
-    
-    var capacity: Int?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,41 +29,23 @@ class AvailableRoomsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return roomsForTimes.count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return roomsForTimes[section].count
+        return 0
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section{
-        case 0: return "1:00pm - 2:00pm"
-        case 1: return "2:00pm - 3:00pm"
-        case 2: return "3:00pm - 4:00pm"
-        default: return "TBA"
-        }
-    }
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        if let roomCell = cell as? AvailableRoomTableViewCell{
-            roomCell.roomNumber.text = roomsForTimes[indexPath.section][indexPath.row].roomNumber?.description
-            if let imageName = roomsForTimes[indexPath.section][indexPath.row].imageName{
-                roomCell.roomImage?.image = UIImage(named: imageName)
-            }
-            else{
-                roomCell.roomImage?.image = nil
-            }
-            
-        }
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,27 +82,14 @@ class AvailableRoomsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let segIdentifier = segue.identifier {
-            if segIdentifier == "RoomSegue" {
-                if let RoomViewController = segue.destination as? RoomViewController,
-                    let cell = sender as? UITableViewCell
-                     {
-                    if let indexPath = tableView.indexPath(for: cell) {
-                        let data = roomsForTimes
-                        RoomViewController.Room = data[indexPath.section][indexPath.row]
-                    }
-                }
-                
-            }
-        }
-        
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }

@@ -8,16 +8,22 @@
 
 import Foundation
 import UIKit
+import JBDatePicker
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, JBDatePickerViewDelegate {
     
+    @IBOutlet weak var calendar: JBDatePickerView!
     @IBOutlet weak var capacityPicker: UISegmentedControl!
     @IBOutlet weak var durationPicker: UISegmentedControl!
-    @IBOutlet weak var datePicker: UITextField!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+
+        calendar.delegate = self
+        
+    }
+    func didSelectDay(_ dayView: JBDatePickerDayView) {
+        
     }
 }
 
