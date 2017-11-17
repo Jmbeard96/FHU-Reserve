@@ -415,40 +415,45 @@
                                                         <constraint firstAttribute="width" constant="100" id="dzY-rZ-8CQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1hO-ZV-UFR">
-                                                    <rect key="frame" x="123" y="14" width="131.5" height="60"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-au-oDs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-Co-O63">
-                                                            <rect key="frame" x="0.0" y="34.5" width="39.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="Gm2-AT-TjS"/>
-                                                    </constraints>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-au-oDs">
+                                                    <rect key="frame" x="123" y="14" width="58" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-Co-O63">
+                                                    <rect key="frame" x="189" y="15" width="39.5" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-bU-nhB">
+                                                    <rect key="frame" x="123" y="52" width="219" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="0Lh-bU-nhB" secondAttribute="bottom" constant="51.5" id="0nm-Wu-s9M"/>
                                                 <constraint firstItem="A2G-ak-qTE" firstAttribute="leading" secondItem="xBZ-fL-uaa" secondAttribute="leading" constant="15" id="4a6-R9-0N8"/>
+                                                <constraint firstItem="bgE-Co-O63" firstAttribute="top" secondItem="xBZ-fL-uaa" secondAttribute="top" constant="15" id="8Mi-g9-Qns"/>
                                                 <constraint firstItem="A2G-ak-qTE" firstAttribute="top" secondItem="xBZ-fL-uaa" secondAttribute="top" constant="15" id="Bdy-pg-DoF"/>
-                                                <constraint firstAttribute="bottom" secondItem="1hO-ZV-UFR" secondAttribute="bottom" constant="55.5" id="FT5-q4-W6M"/>
-                                                <constraint firstItem="1hO-ZV-UFR" firstAttribute="top" secondItem="xBZ-fL-uaa" secondAttribute="top" constant="14" id="QqG-Cx-beE"/>
+                                                <constraint firstItem="zhL-au-oDs" firstAttribute="top" secondItem="xBZ-fL-uaa" secondAttribute="top" constant="14" id="Iw4-hd-UXN"/>
+                                                <constraint firstItem="0Lh-bU-nhB" firstAttribute="leading" secondItem="A2G-ak-qTE" secondAttribute="trailing" constant="8" id="gIF-iJ-gPk"/>
+                                                <constraint firstAttribute="bottom" secondItem="bgE-Co-O63" secondAttribute="bottom" constant="89" id="iii-lO-tFN"/>
                                                 <constraint firstAttribute="bottom" secondItem="A2G-ak-qTE" secondAttribute="bottom" constant="14.5" id="kxW-cu-fJQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="1hO-ZV-UFR" secondAttribute="trailing" constant="87.5" id="mNU-M1-VkH"/>
-                                                <constraint firstItem="1hO-ZV-UFR" firstAttribute="leading" secondItem="A2G-ak-qTE" secondAttribute="trailing" constant="8" id="s2C-1Q-nSd"/>
+                                                <constraint firstItem="zhL-au-oDs" firstAttribute="leading" secondItem="A2G-ak-qTE" secondAttribute="trailing" constant="8" id="na3-AZ-OIq"/>
+                                                <constraint firstItem="bgE-Co-O63" firstAttribute="leading" secondItem="zhL-au-oDs" secondAttribute="trailing" constant="8" id="oCX-5T-Vbz"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Lh-bU-nhB" secondAttribute="trailing" id="qbZ-Jf-l4o"/>
+                                                <constraint firstItem="0Lh-bU-nhB" firstAttribute="top" secondItem="zhL-au-oDs" secondAttribute="bottom" constant="12" id="riR-hG-CJp"/>
+                                                <constraint firstAttribute="trailing" secondItem="bgE-Co-O63" secondAttribute="trailing" constant="113.5" id="uW6-TO-Fkz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="roomImage" destination="A2G-ak-qTE" id="lAN-eN-em6"/>
                                             <outlet property="roomNumber" destination="bgE-Co-O63" id="Qht-50-wCN"/>
+                                            <outlet property="time" destination="0Lh-bU-nhB" id="e5p-zx-cjF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

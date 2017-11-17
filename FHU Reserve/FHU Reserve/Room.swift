@@ -13,15 +13,15 @@ public class Room{
     var roomNumber: Int?
     var imageName: String?
     var amenities: [String]?
-    var availableTimes: [Int]?
+    var reservedTime: String?
     var capacity: Int?
     
-    init(roomNumber: Int, imageName: String, amenities: [String], availableTimes: [Int], capacity: Int) {
+    init(roomNumber: Int, imageName: String, amenities: [String], reservedTime: String, capacity: Int) {
         
         self.roomNumber = roomNumber
         self.imageName = imageName
         self.amenities = amenities
-        self.availableTimes = availableTimes
+        self.reservedTime = reservedTime
         self.capacity = capacity
     }
     
