@@ -34,16 +34,16 @@
                                                 <rect key="frame" x="0.0" y="50" width="325" height="390"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-t2-jUO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="65"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="15.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX0-8p-IqF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="145.5" height="26.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="145.5" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-64-iZn">
-                                                                <rect key="frame" x="0.0" y="37" width="325" height="29"/>
+                                                                <rect key="frame" x="0.0" y="10.5" width="325" height="6"/>
                                                                 <segments>
                                                                     <segment title="1 - 2"/>
                                                                     <segment title="3 - 4"/>
@@ -63,7 +63,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-bI-2Of">
-                                                        <rect key="frame" x="0.0" y="87.5" width="325" height="65"/>
+                                                        <rect key="frame" x="0.0" y="38" width="325" height="65"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iL-94-Y6g">
                                                                 <rect key="frame" x="0.0" y="0.0" width="81.5" height="26.5"/>
@@ -78,7 +78,7 @@
                                                                     <segment title="2 hours"/>
                                                                     <segment title="3 hours"/>
                                                                 </segments>
-                                                                <color key="tintColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" red="0.433025062084198" green="0.020777774974703789" blue="0.13320544362068176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </segmentedControl>
                                                         </subviews>
                                                         <constraints>
@@ -92,16 +92,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="x3L-6U-eeC">
-                                                        <rect key="frame" x="0.0" y="175" width="325" height="215"/>
+                                                        <rect key="frame" x="0.0" y="125.5" width="325" height="264.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-92-DDZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="26.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-92-DDZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqQ-0B-gKd" customClass="JBDatePickerView" customModule="JBDatePicker">
-                                                                <rect key="frame" x="0.0" y="35" width="325" height="180"/>
+                                                                <rect key="frame" x="0.0" y="34.5" width="325" height="230"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -111,7 +111,7 @@
                                                             <constraint firstItem="CqQ-0B-gKd" firstAttribute="leading" secondItem="x3L-6U-eeC" secondAttribute="leading" id="Cn3-hc-zO4"/>
                                                             <constraint firstAttribute="trailing" secondItem="CqQ-0B-gKd" secondAttribute="trailing" id="NOG-0s-YXV"/>
                                                             <constraint firstAttribute="bottom" secondItem="CqQ-0B-gKd" secondAttribute="bottom" id="Wf3-3k-TRD"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Toa-92-DDZ" secondAttribute="trailing" constant="280" id="mlP-LX-zyp"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Toa-92-DDZ" secondAttribute="trailing" constant="150" id="mlP-LX-zyp"/>
                                                             <constraint firstItem="Toa-92-DDZ" firstAttribute="top" secondItem="x3L-6U-eeC" secondAttribute="top" id="nS5-NU-X4O"/>
                                                         </constraints>
                                                     </stackView>
@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="calendar" destination="CqQ-0B-gKd" id="hZX-7f-4pz"/>
                         <outlet property="capacityPicker" destination="rPN-64-iZn" id="WTE-sM-M7K"/>
+                        <outlet property="dateLabel" destination="Toa-92-DDZ" id="uTS-18-ELv"/>
                         <outlet property="durationPicker" destination="opH-uD-vnf" id="lCk-Sx-Hwv"/>
                     </connections>
                 </viewController>
