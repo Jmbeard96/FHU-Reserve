@@ -387,7 +387,7 @@
         <!--My Rooms-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="My Rooms" id="8rJ-Kc-sve" customClass="MyRoomsTableViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="My Rooms" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
                                     <constraint firstAttribute="height" constant="554" id="vOR-BE-1FH"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReservedRoomCell" rowHeight="130" id="geE-hI-yTz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReservedRoomCell" rowHeight="130" id="geE-hI-yTz" customClass="MyRoomsTableViewCell" customModule="FHU_Reserve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="geE-hI-yTz" id="xBZ-fL-uaa">
@@ -445,6 +445,10 @@
                                                 <constraint firstItem="1hO-ZV-UFR" firstAttribute="leading" secondItem="A2G-ak-qTE" secondAttribute="trailing" constant="8" id="s2C-1Q-nSd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="roomImage" destination="A2G-ak-qTE" id="lAN-eN-em6"/>
+                                            <outlet property="roomNumber" destination="bgE-Co-O63" id="Qht-50-wCN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -455,8 +459,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="L6X-d5-85n" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="trailing" constant="-375" id="Fd8-KH-hTx"/>
-                            <constraint firstItem="L6X-d5-85n" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="bottom" constant="-554" id="P4x-t6-J7V"/>
+                            <constraint firstItem="L6X-d5-85n" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="3n2-i6-E8G"/>
+                            <constraint firstItem="L6X-d5-85n" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="IsA-zU-VYz"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="L6X-d5-85n" secondAttribute="trailing" id="a7d-Gq-tsw"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="L6X-d5-85n" secondAttribute="bottom" id="myD-8N-p3F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
