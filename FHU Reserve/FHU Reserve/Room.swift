@@ -15,6 +15,7 @@ public class Room{
     var amenities: [String]?
     var availableTimes: [Int]?
     var capacity: Int?
+    var favorite: Bool = false
     
     init(roomNumber: Int, imageName: String, amenities: [String], availableTimes: [Int], capacity: Int) {
         

@@ -320,6 +320,9 @@
                                                         <state key="normal" title="Add to Favorites">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addToFavorites:" destination="17M-fC-sGZ" eventType="touchUpInside" id="h6X-2R-QVI"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-e4-4xE">
                                                         <rect key="frame" x="0.0" y="60" width="325" height="40"/>
@@ -377,6 +380,7 @@
                         <viewLayoutGuide key="safeArea" id="oEC-ba-Nzp"/>
                     </view>
                     <connections>
+                        <outlet property="addToFavoritesButton" destination="67j-jQ-JIx" id="Obp-rN-dkx"/>
                         <outlet property="roomAmenities" destination="ZV4-Sb-r5U" id="TMe-Qh-v09"/>
                         <outlet property="roomImage" destination="XTB-hr-Fkw" id="fXV-5P-fEb"/>
                     </connections>

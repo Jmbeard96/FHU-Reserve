@@ -13,6 +13,7 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var roomAmenities: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
     var Room: Room?
+    var tableViewIndex: Int?
     
 
     override func viewDidLoad() {
@@ -31,6 +32,12 @@ class RoomViewController: UIViewController {
     
 
 
+    @IBAction func addToFavorites(_ sender: Any) {
+        let dataSetIndex: Int = tableViewIndex! / 3
+        let roomIndex = RoomSet.roomsForTimes[dataSetIndex].index(where: {$0.roomNumber == Room?.roomNumber })
+        Room?.favorite = true
+        RoomSet.roomsForTimes[dataSetIndex][roomIndex!] = Room!
+    }
     
 
     /*
