@@ -1,42 +1,37 @@
 //
-//  RoomViewController.swift
+//  MyRoomViewController.swift
 //  FHU Reserve
 //
-//  Created by Jeremy Beard on 11/16/17.
+//  Created by Jeremy Beard on 11/17/17.
 //  Copyright © 2017 Freed Hardeman University. All rights reserved.
 //
 
 import UIKit
 
-class RoomViewController: UIViewController {
+class MyRoomViewController: UIViewController {
 
-    @IBOutlet weak var roomAmenities: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
+    @IBOutlet weak var reserveTime: UILabel!
+    @IBOutlet weak var roomAmenities: UILabel!
     var Room: Room?
-    var tableViewIndex: Int?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        roomImage?.image = UIImage(named: (Room?.imageName)!)
         var amenities = ""
-        
+        reserveTime.text = Room?.reservedTime
         for amenity in (Room?.amenities)!{
             amenities += (amenity + ", ")
         }
         roomAmenities.text = amenities
+        roomImage.image = UIImage(named: (Room?.imageName)!)
 
         // Do any additional setup after loading the view.
     }
-    
 
-
-    @IBAction func addToFavorites(_ sender: Any) {
-        let dataSetIndex: Int = tableViewIndex! / 3
-        let roomIndex = RoomSet.roomsForTimes[dataSetIndex].index(where: {$0.roomNumber == Room?.roomNumber })
-        Room?.favorite = true
-        RoomSet.roomsForTimes[dataSetIndex][roomIndex!] = Room!
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 

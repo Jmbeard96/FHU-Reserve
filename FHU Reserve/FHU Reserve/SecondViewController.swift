@@ -10,22 +10,24 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var myRooms = RoomSet.roomsForTimes
+    @IBOutlet weak var myRoomsTableView: UITableView!
+    var myRooms = MyRooms.myRooms
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return myRooms.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myRooms[section].count
+        return myRooms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReservedRoomCell", for: indexPath)
         
         if let reservedRoomCell = cell as? MyRoomsTableViewCell{
-            reservedRoomCell.roomNumber.text = myRooms[indexPath.section][indexPath.row].roomNumber?.description
-            if let imageName = myRooms[indexPath.section][indexPath.row].imageName{
+            reservedRoomCell.roomNumber.text = myRooms[indexPath.row].roomNumber?.description
+            reservedRoomCell.time.text = myRooms[indexPath.row].reservedTime
+            if let imageName = myRooms[indexPath.row].imageName{
                 reservedRoomCell.roomImage?.image = UIImage(named: imageName)
             }
             else{
@@ -40,10 +42,25 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section{
-        case 0: return "1:00pm - 2:00pm"
-        case 1: return "2:00pm - 3:00pm"
-        case 2: return "3:00pm - 4:00pm"
+        case 0: return "November 24, 2017"
+        case 1: return "November 26, 2017"
+        case 2: return "November 27, 2017"
         default: return "TBA"
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segIdentifier = segue.identifier {
+            if segIdentifier == "MyRoomSegue" {
+                if let MyRoomViewController = segue.destination as? MyRoomViewController,
+                    let cell = sender as? UITableViewCell{
+                    if let indexPath = myRoomsTableView.indexPath(for: cell) {
+                        let data = myRooms
+                        MyRoomViewController.Room = data[indexPath.row]
+                    }
+                }
+                
+            }
         }
     }
     
@@ -51,6 +68,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Rooms"
+
     }
 
     override func didReceiveMemoryWarning() {
