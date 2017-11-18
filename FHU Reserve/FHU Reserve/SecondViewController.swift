@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var myRoomsTableView: UITableView!
     var myRooms = MyRooms.myRooms
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,10 +49,26 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segIdentifier = segue.identifier {
+            if segIdentifier == "MyRoomSegue" {
+                if let MyRoomViewController = segue.destination as? MyRoomViewController,
+                    let cell = sender as? UITableViewCell{
+                    if let indexPath = myRoomsTableView.indexPath(for: cell) {
+                        let data = myRooms
+                        MyRoomViewController.Room = data[indexPath.row]
+                    }
+                }
+                
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Rooms"
+
     }
 
     override func didReceiveMemoryWarning() {
