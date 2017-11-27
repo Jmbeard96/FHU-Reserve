@@ -25,7 +25,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReservedRoomCell", for: indexPath)
         
         if let reservedRoomCell = cell as? MyRoomsTableViewCell{
-            reservedRoomCell.roomNumber.text = myRooms[indexPath.row].roomNumber?.description
+            reservedRoomCell.roomNumber.text = "Room " +
+                (myRooms[indexPath.row].roomNumber?.description)!
             reservedRoomCell.time.text = myRooms[indexPath.row].reservedTime
             if let imageName = myRooms[indexPath.row].imageName{
                 reservedRoomCell.roomImage?.image = UIImage(named: imageName)

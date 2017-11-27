@@ -18,8 +18,10 @@ class MyRoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Room " + (Room?.roomNumber?.description)!
+        
         var amenities = ""
-        reserveTime.text = Room?.reservedTime
+        reserveTime.text = "Reserved for " + (Room?.reservedTime)!
         for amenity in (Room?.amenities)!{
             amenities += (amenity + ", ")
         }

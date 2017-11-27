@@ -19,6 +19,8 @@ class RoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Room " + (Room?.roomNumber?.description)!
+        
         roomImage?.image = UIImage(named: (Room?.imageName)!)
         var amenities = ""
         
