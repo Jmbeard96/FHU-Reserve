@@ -380,7 +380,6 @@
                         <viewLayoutGuide key="safeArea" id="oEC-ba-Nzp"/>
                     </view>
                     <connections>
-                        <outlet property="addToFavoritesButton" destination="67j-jQ-JIx" id="Obp-rN-dkx"/>
                         <outlet property="roomAmenities" destination="ZV4-Sb-r5U" id="TMe-Qh-v09"/>
                         <outlet property="roomImage" destination="XTB-hr-Fkw" id="fXV-5P-fEb"/>
                     </connections>
