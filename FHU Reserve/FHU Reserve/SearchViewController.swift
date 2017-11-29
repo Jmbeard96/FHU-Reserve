@@ -24,15 +24,15 @@ class SearchViewController: UIViewController, JBDatePickerViewDelegate {
 
         calendar.delegate = self
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
-        dateLabel.text = "Date - " + dateFormatter.string(from: calendar.selectedDateView.date!)
+        dateLabel.text = dateFormatter.string(from: calendar.selectedDateView.date!)
     }
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
-        dateLabel.text = "Date - " + dateFormatter.string(from: dayView.date!)
+        dateLabel.text = dateFormatter.string(from: dayView.date!)
     }
     
     var colorForWeekDaysViewBackground: UIColor { return primaryColor }
