@@ -392,12 +392,14 @@
 			baseConfigurationReference = 7E0F02D11D10C6A1B71CC175 /* Pods-FHU Reserve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H35E4J43TW;
+				DEVELOPMENT_TEAM = 7L7XYK2UEN;
 				INFOPLIST_FILE = "FHU Reserve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.fhu.FHU-Reserve";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fhu.FHU-Reserve2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,12 +410,14 @@
 			baseConfigurationReference = CD0AF4BFC8CDD196076BBC41 /* Pods-FHU Reserve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H35E4J43TW;
+				DEVELOPMENT_TEAM = 7L7XYK2UEN;
 				INFOPLIST_FILE = "FHU Reserve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.fhu.FHU-Reserve";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fhu.FHU-Reserve2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

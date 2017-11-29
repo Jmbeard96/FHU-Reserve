@@ -95,7 +95,7 @@
                                                         <rect key="frame" x="0.0" y="125.5" width="325" height="264.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-92-DDZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="26.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                                                             <constraint firstItem="CqQ-0B-gKd" firstAttribute="leading" secondItem="x3L-6U-eeC" secondAttribute="leading" id="Cn3-hc-zO4"/>
                                                             <constraint firstAttribute="trailing" secondItem="CqQ-0B-gKd" secondAttribute="trailing" id="NOG-0s-YXV"/>
                                                             <constraint firstAttribute="bottom" secondItem="CqQ-0B-gKd" secondAttribute="bottom" id="Wf3-3k-TRD"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Toa-92-DDZ" secondAttribute="trailing" constant="150" id="mlP-LX-zyp"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Toa-92-DDZ" secondAttribute="trailing" id="mlP-LX-zyp"/>
                                                             <constraint firstItem="Toa-92-DDZ" firstAttribute="top" secondItem="x3L-6U-eeC" secondAttribute="top" id="nS5-NU-X4O"/>
                                                         </constraints>
                                                     </stackView>
