@@ -22,12 +22,21 @@ class RoomViewController: UIViewController {
         navigationItem.title = "Room " + (Room?.roomNumber?.description)!
         
         roomImage?.image = UIImage(named: (Room?.imageName)!)
-        var amenities = ""
         
-        for amenity in (Room?.amenities)!{
-            amenities += (amenity + ", ")
+        if let amenityArray = Room?.amenities{
+            var amenities = ""
+            for amenity in amenityArray{
+                if(amenity == amenityArray[amenityArray.count - 1]){
+                    amenities += amenity
+                }
+                else{
+                    amenities += (amenity + ", ")
+                }
+            }
+            roomAmenities.text = amenities
         }
-        roomAmenities.text = amenities
+        
+        
 
         // Do any additional setup after loading the view.
     }

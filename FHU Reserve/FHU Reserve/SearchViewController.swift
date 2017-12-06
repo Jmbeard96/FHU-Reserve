@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, JBDatePickerViewDelegate {
         super.viewDidLoad()
 
         calendar.delegate = self
+        calendar.heightAnchor.constraint(equalToConstant: 275).isActive = true
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none

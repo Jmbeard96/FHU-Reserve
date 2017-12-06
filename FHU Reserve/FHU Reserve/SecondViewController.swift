@@ -17,6 +17,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return 3
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myRooms.count
     }
@@ -26,9 +31,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         if let reservedRoomCell = cell as? MyRoomsTableViewCell{
             reservedRoomCell.roomNumber.text = "Room " +
-                (myRooms[indexPath.row].roomNumber?.description)!
-            reservedRoomCell.time.text = myRooms[indexPath.row].reservedTime
-            if let imageName = myRooms[indexPath.row].imageName{
+                (myRooms[indexPath.section][indexPath.row].roomNumber?.description)!
+            reservedRoomCell.time.text = myRooms[indexPath.section][indexPath.row].reservedTime
+            if let imageName = myRooms[indexPath.section][indexPath.row].imageName{
                 reservedRoomCell.roomImage?.image = UIImage(named: imageName)
             }
             else{
@@ -57,7 +62,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                     let cell = sender as? UITableViewCell{
                     if let indexPath = myRoomsTableView.indexPath(for: cell) {
                         let data = myRooms
-                        MyRoomViewController.Room = data[indexPath.row]
+                        MyRoomViewController.Room = data[indexPath.section][indexPath.row]
                     }
                 }
                 
@@ -69,7 +74,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Rooms"
-
+        
     }
 
     override func didReceiveMemoryWarning() {

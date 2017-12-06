@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/jeremybeard/Documents/GitHub/FHU-Reserve/FHU Reserve/FHU Reserve/MyRoomsTableViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:FHU Reserve.xcodeproj">
    </FileRef>
    <FileRef
