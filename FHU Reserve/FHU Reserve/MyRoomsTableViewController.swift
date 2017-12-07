@@ -1,21 +1,16 @@
 //
-//  AvailableRoomsTableViewController.swift
-//  FHU Reserve
+//  MyRoomsTableViewController.swift
+//  
 //
-//  Created by Jeremy Beard on 11/14/17.
-//  Copyright © 2017 Freed Hardeman University. All rights reserved.
+//  Created by Jeremy Beard on 11/29/17.
 //
 
 import UIKit
-import SwiftyJSON
 
-class AvailableRoomsTableViewController: UITableViewController {
+class MyRoomsTableViewController: UITableViewController {
 
-    var queryResponse: JSON
-    var searchDate: Date
-    var durationHours: Int
-    var capacity: Int
-    
+    var myRooms = MyRooms.myRooms
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,43 +33,50 @@ class AvailableRoomsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return queryResponse.array!.count
+        return myRooms.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return queryResponse.array![section].count
+        return myRooms[section].count
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section{
-        case 0: return "1:00pm - 2:00pm"
-        case 1: return "2:00pm - 3:00pm"
-        case 2: return "3:00pm - 4:00pm"
-        default: return "TBA"
-        }
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
-
-        if let roomCell = cell as? AvailableRoomTableViewCell{
-            roomCell.roomNumber.text = roomsForTimes[indexPath.section][indexPath.row].roomNumber?.description
-            if let imageName = roomsForTimes[indexPath.section][indexPath.row].imageName{
-                roomCell.roomImage?.image = UIImage(named: imageName)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReservedRoomCell", for: indexPath)
+        
+        if let reservedRoomCell = cell as? MyRoomsTableViewCell{
+            let room = myRooms[indexPath.section][indexPath.row]
+            
+            if let roomNumber = room.roomNumber{
+                reservedRoomCell.roomNumber.text = "Room \(roomNumber)"
             }
+            if let time = room.reservedTime{
+                reservedRoomCell.time.text = time
+            }
+            if let imageName = room.imageName{
+                reservedRoomCell.roomImage?.image = UIImage(named: imageName)
+            }
+                
             else{
-                roomCell.roomImage?.image = nil
+                reservedRoomCell.roomImage?.image = nil
             }
             
+            
         }
-
+        
         return cell
     }
     
-    func loadData(){
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+        switch section{
+        case 0: return "November 24, 2017"
+        case 1: return "November 26, 2017"
+        case 2: return "November 27, 2017"
+        default: return "TBA"
+        }
     }
     
 
@@ -117,23 +119,19 @@ class AvailableRoomsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segIdentifier = segue.identifier {
-            if segIdentifier == "RoomSegue" {
-                if let RoomViewController = segue.destination as? RoomViewController,
-                    let cell = sender as? UITableViewCell
-                     {
+            if segIdentifier == "MyRoomSegue" {
+                if let MyRoomViewController = segue.destination as? MyRoomViewController,
+                    let cell = sender as? UITableViewCell{
                     if let indexPath = tableView.indexPath(for: cell) {
-                        let data = roomsForTimes
-                        RoomViewController.Room = data[indexPath.section][indexPath.row]
-                        RoomViewController.tableViewIndex = indexPath.row
+                        let data = myRooms
+                        MyRoomViewController.Room = data[indexPath.section][indexPath.row]
                     }
                 }
                 
             }
         }
-        
     }
     
 

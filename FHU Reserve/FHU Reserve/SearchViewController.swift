@@ -21,8 +21,11 @@ class SearchViewController: UIViewController, JBDatePickerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
 
         calendar.delegate = self
+        calendar.heightAnchor.constraint(equalToConstant: 275).isActive = true
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none

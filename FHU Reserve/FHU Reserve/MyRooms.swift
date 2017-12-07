@@ -9,7 +9,5 @@
 import Foundation
 
 public class MyRooms{
-    
     static var myRooms: [Room] = []
-
 }

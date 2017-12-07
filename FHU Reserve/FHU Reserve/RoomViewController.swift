@@ -24,10 +24,34 @@ class RoomViewController: UIViewController {
         roomImage?.image = UIImage(named: (Room?.imageUrl)!)
         var amenities = ""
         
-        for amenity in (Room?.amenities)!{
-            amenities += (amenity + ", ")
+        if let amenityArray = Room?.amenities{
+            var amenities = ""
+            for amenity in amenityArray{
+                if(amenityArray.count == 1){
+                    amenities += amenity
+                }
+                else if(amenityArray.count == 2){
+                    if(amenity == amenityArray[amenityArray.count - 1]){
+                        amenities += amenity
+                    }
+                    else{
+                        amenities += "\(amenity) and "
+                    }
+                }
+                else{
+                    if(amenity == amenityArray[amenityArray.count - 1]){
+                        amenities += "and \(amenity)"
+                    }
+                    else{
+                        amenities += (amenity + ", ")
+                    }
+                }
+                
+            }
+            roomAmenities.text = amenities
         }
-        roomAmenities.text = amenities
+        
+        
 
         // Do any additional setup after loading the view.
     }
