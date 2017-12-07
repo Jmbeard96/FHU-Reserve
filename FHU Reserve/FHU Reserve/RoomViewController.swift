@@ -19,9 +19,9 @@ class RoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Room " + (Room?.roomNumber?.description)!
+        navigationItem.title = (Room?.roomName?.description)!
         
-        roomImage?.image = UIImage(named: (Room?.imageName)!)
+        roomImage?.image = UIImage(named: (Room?.imageUrl)!)
         var amenities = ""
         
         for amenity in (Room?.amenities)!{

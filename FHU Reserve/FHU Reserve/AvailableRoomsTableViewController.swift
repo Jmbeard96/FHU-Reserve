@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AvailableRoomsTableViewController: UITableViewController {
 
-    var roomsForTimes = RoomSet.roomsForTimes
-    
-    var capacity: Int?
-    
+    var queryResponse: JSON
+    var searchDate: Date
+    var durationHours: Int
+    var capacity: Int
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,12 @@ class AvailableRoomsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return roomsForTimes.count
+        return queryResponse.array!.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return roomsForTimes[section].count
+        return queryResponse.array![section].count
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -67,6 +68,10 @@ class AvailableRoomsTableViewController: UITableViewController {
         }
 
         return cell
+    }
+    
+    func loadData(){
+        
     }
     
 

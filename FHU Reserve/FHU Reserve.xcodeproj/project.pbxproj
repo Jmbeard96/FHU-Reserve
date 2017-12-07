@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4060DA53BF6172641B2B1C20 /* Pods_FHU_Reserve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4E324340A979193E1A367 /* Pods_FHU_Reserve.framework */; };
+		530B11F51FD89CE000B2A89D /* FavoriteRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530B11F41FD89CE000B2A89D /* FavoriteRoom.swift */; };
+		530B11F71FD8A9DD00B2A89D /* FhuReserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530B11F61FD8A9DD00B2A89D /* FhuReserve.swift */; };
 		7171DD0A1FBA549800B3E5FF /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD091FBA549800B3E5FF /* Room.swift */; };
 		7171DD0C1FBA65C600B3E5FF /* RoomSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */; };
 		7171DD101FBB7D4700B3E5FF /* AvailableRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		530B11F41FD89CE000B2A89D /* FavoriteRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRoom.swift; sourceTree = "<group>"; };
+		530B11F61FD8A9DD00B2A89D /* FhuReserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhuReserve.swift; sourceTree = "<group>"; };
 		63F4E324340A979193E1A367 /* Pods_FHU_Reserve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FHU_Reserve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7171DD091FBA549800B3E5FF /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSet.swift; sourceTree = "<group>"; };
@@ -75,6 +79,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		530B11F31FD89CCA00B2A89D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7171DD091FBA549800B3E5FF /* Room.swift */,
+				530B11F41FD89CE000B2A89D /* FavoriteRoom.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53C798A81FD88586007F191A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				530B11F61FD8A9DD00B2A89D /* FhuReserve.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		71A4A7BA1FAE72EA000C9A80 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +117,8 @@
 		71A4A7C51FAE72EA000C9A80 /* FHU Reserve */ = {
 			isa = PBXGroup;
 			children = (
+				530B11F31FD89CCA00B2A89D /* Models */,
+				53C798A81FD88586007F191A /* Services */,
 				7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */,
 				71A4A7C61FAE72EA000C9A80 /* AppDelegate.swift */,
 				71A4A7CA1FAE72EA000C9A80 /* SecondViewController.swift */,
@@ -105,7 +128,6 @@
 				717D38511FBFB64C0064EEC1 /* MyRoomViewController.swift */,
 				717D38471FBE58500064EEC1 /* RoomViewController.swift */,
 				7171DD111FBB855700B3E5FF /* AvailableRoomTableViewCell.swift */,
-				7171DD091FBA549800B3E5FF /* Room.swift */,
 				7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */,
 				71A33AED1FB25A6900447232 /* SearchViewController.swift */,
 				71A4A7CF1FAE72EA000C9A80 /* Assets.xcassets */,
@@ -226,11 +248,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FHU Reserve/Pods-FHU Reserve-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JBDatePicker/JBDatePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JBDatePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -250,11 +284,13 @@
 				717D384E1FBEB77C0064EEC1 /* MyRoomsTableViewCell.swift in Sources */,
 				717D38501FBF8DAD0064EEC1 /* MyRooms.swift in Sources */,
 				71A4A7C71FAE72EA000C9A80 /* AppDelegate.swift in Sources */,
+				530B11F71FD8A9DD00B2A89D /* FhuReserve.swift in Sources */,
 				7171DD0A1FBA549800B3E5FF /* Room.swift in Sources */,
 				717D38521FBFB64C0064EEC1 /* MyRoomViewController.swift in Sources */,
 				7171DD0C1FBA65C600B3E5FF /* RoomSet.swift in Sources */,
 				71A33AEE1FB25A6900447232 /* SearchViewController.swift in Sources */,
 				717D38481FBE58500064EEC1 /* RoomViewController.swift in Sources */,
+				530B11F51FD89CE000B2A89D /* FavoriteRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
