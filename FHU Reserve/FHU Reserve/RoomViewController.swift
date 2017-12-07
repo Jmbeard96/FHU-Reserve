@@ -26,12 +26,26 @@ class RoomViewController: UIViewController {
         if let amenityArray = Room?.amenities{
             var amenities = ""
             for amenity in amenityArray{
-                if(amenity == amenityArray[amenityArray.count - 1]){
+                if(amenityArray.count == 1){
                     amenities += amenity
                 }
-                else{
-                    amenities += (amenity + ", ")
+                else if(amenityArray.count == 2){
+                    if(amenity == amenityArray[amenityArray.count - 1]){
+                        amenities += amenity
+                    }
+                    else{
+                        amenities += "\(amenity) and "
+                    }
                 }
+                else{
+                    if(amenity == amenityArray[amenityArray.count - 1]){
+                        amenities += "and \(amenity)"
+                    }
+                    else{
+                        amenities += (amenity + ", ")
+                    }
+                }
+                
             }
             roomAmenities.text = amenities
         }
