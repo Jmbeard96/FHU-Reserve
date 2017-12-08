@@ -122,6 +122,9 @@ class AvailableRoomsTableViewController: UITableViewController {
                     if let indexPath = tableView.indexPath(for: cell) {
                         let data = roomsForTimes
                         RoomViewController.Room = data[indexPath.section][indexPath.row]
+                        RoomViewController.section = indexPath.section
+                        RoomViewController.row = indexPath.row
+                        
                         RoomViewController.tableViewIndex = indexPath.row
                     }
                 }

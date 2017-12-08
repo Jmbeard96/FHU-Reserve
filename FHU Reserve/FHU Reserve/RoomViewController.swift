@@ -13,6 +13,8 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var roomAmenities: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
     var Room: Room?
+    var section: Int?
+    var row: Int?
     var tableViewIndex: Int?
     
 
@@ -55,7 +57,12 @@ class RoomViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func reserve(_ sender: Any) {
+        MyRooms.myRooms[0].append(RoomSet.roomsForTimes[section!][row!])
+        RoomSet.roomsForTimes[section!].remove(at: row!)
+        self.performSegue(withIdentifier: "unwindToFirstView", sender: self)
+    }
+    
 
     @IBAction func addToFavorites(_ sender: Any) {
         let dataSetIndex: Int = tableViewIndex! / 3

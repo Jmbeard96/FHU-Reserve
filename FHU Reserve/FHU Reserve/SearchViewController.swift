@@ -19,6 +19,10 @@ class SearchViewController: UIViewController, JBDatePickerViewDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     var primaryColor = UIColor.init(red: 102/255.0, green: 20/255.0, blue: 36/255.0, alpha: 1)
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
