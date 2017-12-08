@@ -482,7 +482,6 @@
                     <connections>
                         <segue destination="Nwz-Ix-Pmx" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="2mM-vF-YHM" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="gb3-6U-QAA" kind="relationship" relationship="viewControllers" id="Sck-Y3-RBF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -599,96 +598,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5a-6P-7mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1253.5999999999999" y="7.6461769115442282"/>
-        </scene>
-        <!--Available Times-->
-        <scene sceneID="p5H-Jt-weB">
-            <objects>
-                <tableViewController title="Available Times" id="MXz-ao-2o5" customClass="AvailableRoomsTableViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="t35-Kk-gco">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="130" id="OEU-zc-dcY" customClass="AvailableRoomTableViewCell" customModule="FHU_Reserve" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OEU-zc-dcY" id="9Vk-1L-ifV">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="129.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roomThree" translatesAutoresizingMaskIntoConstraints="NO" id="oiA-bC-x1R">
-                                            <rect key="frame" x="15" y="14.5" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="7mU-TY-u4L"/>
-                                                <constraint firstAttribute="height" constant="100" id="Jrd-Lw-Pu1"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-d0-oXx">
-                                            <rect key="frame" x="123" y="14" width="131.5" height="60"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISI-9Z-NkL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-oE-V7s">
-                                                    <rect key="frame" x="0.0" y="34.5" width="39.5" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="QpK-W8-Bz6"/>
-                                            </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="fh8-d0-oXx" firstAttribute="top" secondItem="9Vk-1L-ifV" secondAttribute="top" constant="14" id="7ig-5i-ZAB"/>
-                                        <constraint firstItem="oiA-bC-x1R" firstAttribute="top" secondItem="9Vk-1L-ifV" secondAttribute="top" constant="15" id="A8F-56-ddB"/>
-                                        <constraint firstItem="fh8-d0-oXx" firstAttribute="leading" secondItem="oiA-bC-x1R" secondAttribute="trailing" constant="8" id="K0J-DJ-Snk"/>
-                                        <constraint firstAttribute="trailing" secondItem="fh8-d0-oXx" secondAttribute="trailing" constant="86.5" id="Ott-t2-V0h"/>
-                                        <constraint firstItem="oiA-bC-x1R" firstAttribute="leading" secondItem="9Vk-1L-ifV" secondAttribute="leading" constant="15" id="oTc-7P-Hm5"/>
-                                        <constraint firstAttribute="bottom" secondItem="fh8-d0-oXx" secondAttribute="bottom" constant="55.5" id="r8V-tm-bzR"/>
-                                        <constraint firstAttribute="bottom" secondItem="oiA-bC-x1R" secondAttribute="bottom" constant="15" id="rZJ-gt-bfv"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="roomImage" destination="oiA-bC-x1R" id="zp1-dh-Rrc"/>
-                                    <outlet property="roomNumber" destination="5cL-oE-V7s" id="Akm-mT-4Og"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MXz-ao-2o5" id="0h3-EV-1Ga"/>
-                            <outlet property="delegate" destination="MXz-ao-2o5" id="X4U-zN-hX8"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="g5Z-Pg-hSO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWB-Ph-5wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1254" y="725"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mDu-5t-lou">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gb3-6U-QAA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="yFz-SY-TK6"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4oo-vw-JrN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MXz-ao-2o5" kind="relationship" relationship="rootViewController" id="Obr-p9-mqu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fcd-tG-GqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="471" y="725"/>
         </scene>
     </scenes>
     <resources>
