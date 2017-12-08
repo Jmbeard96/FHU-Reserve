@@ -26,6 +26,10 @@ class SearchViewController: UIViewController, JBDatePickerViewDelegate {
     var durationHours: Int?
     var searchDate: String?
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

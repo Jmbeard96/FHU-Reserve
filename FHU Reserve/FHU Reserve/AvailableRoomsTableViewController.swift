@@ -157,6 +157,7 @@ class AvailableRoomsTableViewController: UITableViewController {
                     let cell = sender as? UITableViewCell
                      {
                     if let indexPath = tableView.indexPath(for: cell) {
+
                         let data = queryResponse!
                         let startTime = data[indexPath.section].startTime
                         let endTime = data[indexPath.section].endTime

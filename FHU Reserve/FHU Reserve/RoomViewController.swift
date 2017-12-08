@@ -16,6 +16,7 @@ class RoomViewController: UIViewController {
 
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
+
     var room: Room?
     var tableViewIndex: Int?
     var reserveProvider: MoyaProvider<FhuReserve>?
@@ -37,8 +38,6 @@ class RoomViewController: UIViewController {
         roomDescription.text = room?.description!
         reserveProvider = MoyaProvider<FhuReserve>()
     }
-    
-
 
     @IBAction func addToFavorites(_ sender: Any) {
 
