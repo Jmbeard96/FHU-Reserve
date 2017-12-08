@@ -10,20 +10,7 @@ import Foundation
 
 public class RoomSet{
     
-    static var roomsForTimes = [[
-        
-        Room(roomNumber: 205, imageName: "studyRoom" , amenities: ["White board", "TV"], reservedTime: "3:00pm - 4:00pm", capacity: 5),
-        Room(roomNumber: 233, imageName: "roomThree", amenities: ["White board"], reservedTime: "3:00pm - 4:00pm", capacity: 2),
-        Room(roomNumber: 107, imageName: "roomTwo", amenities: ["TV"], reservedTime: "3:00pm - 4:00pm", capacity: 3)
-    ],
-    [
-        Room(roomNumber: 233, imageName: "roomThree", amenities: ["White board"], reservedTime: "3:00pm - 4:00pm", capacity: 2),
-        Room(roomNumber: 107, imageName: "roomTwo", amenities: ["TV"], reservedTime: "3:00pm - 4:00pm", capacity: 3)
-    ],
-    [
+    static var roomsForTimes: [[Room]] = [[]]
 
-    Room(roomNumber: 205, imageName: "studyRoom" , amenities: ["White board", "TV"], reservedTime: "3:00pm - 4:00pm", capacity: 5),
-    Room(roomNumber: 233, imageName: "roomThree", amenities: ["White board"], reservedTime: "3:00pm - 4:00pm", capacity: 2),
-    ]]
     
 }
