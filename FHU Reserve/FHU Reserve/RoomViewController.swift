@@ -16,11 +16,8 @@ class RoomViewController: UIViewController {
 
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
-    var section: Int?
-    var row: Int?
-=======
+
     var room: Room?
->>>>>>> master
     var tableViewIndex: Int?
     var reserveProvider: MoyaProvider<FhuReserve>?
     var startTime: String?
