@@ -16,7 +16,6 @@ class RoomViewController: UIViewController {
 
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
-    var Room: Room?
     var section: Int?
     var row: Int?
 =======
