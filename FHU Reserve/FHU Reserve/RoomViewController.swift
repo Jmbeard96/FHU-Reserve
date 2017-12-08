@@ -38,13 +38,6 @@ class RoomViewController: UIViewController {
         roomDescription.text = room?.description!
         reserveProvider = MoyaProvider<FhuReserve>()
     }
-    
-    @IBAction func reserve(_ sender: Any) {
-        MyRooms.myRooms[0].append(RoomSet.roomsForTimes[section!][row!])
-        RoomSet.roomsForTimes[section!].remove(at: row!)
-        self.performSegue(withIdentifier: "unwindToFirstView", sender: self)
-    }
-    
 
     @IBAction func addToFavorites(_ sender: Any) {
 
