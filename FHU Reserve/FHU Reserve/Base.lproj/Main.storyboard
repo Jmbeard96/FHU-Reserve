@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,7 +139,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pgT-me-ymN" kind="show" identifier="timeSearchSegue" id="6kN-9D-caN"/>
+                                                    <action selector="searchRooms:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AF4-OY-rkX"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -174,6 +174,7 @@
                         <outlet property="capacityPicker" destination="rPN-64-iZn" id="WTE-sM-M7K"/>
                         <outlet property="dateLabel" destination="Toa-92-DDZ" id="uTS-18-ELv"/>
                         <outlet property="durationPicker" destination="opH-uD-vnf" id="lCk-Sx-Hwv"/>
+                        <segue destination="pgT-me-ymN" kind="show" identifier="DisplaySearchResults" id="dm6-dx-6i4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -205,15 +206,18 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yc3-eh-bsP">
                                             <rect key="frame" x="123" y="14" width="131.5" height="60"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-xh-pGM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131.5" height="25.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-xh-pGM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="25.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz6-Zm-5AT">
-                                                    <rect key="frame" x="0.0" y="34.5" width="39.5" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-5l-QU3">
+                                                    <rect key="frame" x="0.0" y="39.5" width="88" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="3ZH-Za-rez"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -234,8 +238,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="roomDescription" destination="Bxf-5l-QU3" id="QNW-1Z-35y"/>
                                     <outlet property="roomImage" destination="LTO-ad-8Ir" id="yRW-7F-UJr"/>
-                                    <outlet property="roomNumber" destination="Kz6-Zm-5AT" id="2JV-tL-IzF"/>
+                                    <outlet property="roomName" destination="dWS-xh-pGM" id="nOh-uM-tu3"/>
                                     <segue destination="17M-fC-sGZ" kind="show" identifier="RoomSegue" id="J71-T9-hRi"/>
                                 </connections>
                             </tableViewCell>
@@ -245,6 +250,9 @@
                             <outlet property="delegate" destination="pgT-me-ymN" id="qoM-d7-tzD"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ZxW-7R-9BH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi0-96-VyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,7 +270,9 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Igl-7B-QtQ">
-                                        <rect key="frame" x="25" y="10" width="325" height="523"/>
+
+                                        <rect key="frame" x="0.0" y="10" width="375" height="487.5"/>
+
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roomThree" translatesAutoresizingMaskIntoConstraints="NO" id="XTB-hr-Fkw">
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="300"/>
@@ -271,43 +281,41 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0nm-1m-auT">
-                                                <rect key="frame" x="0.0" y="330" width="325" height="193"/>
+
+                                                <rect key="frame" x="0.0" y="330" width="375" height="157.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zuo-Nu-R5f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-Bc-LxR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="27.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="XXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-Sb-r5U">
-                                                                <rect key="frame" x="0.0" y="35.5" width="325" height="27.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-Sb-r5U" userLabel="Room Description">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27.5" id="wXK-M9-zdd"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="ahw-Bc-LxR" firstAttribute="leading" secondItem="zuo-Nu-R5f" secondAttribute="leading" id="KDp-A3-GGS"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ahw-Bc-LxR" secondAttribute="trailing" id="usk-mH-qFb"/>
                                                             <constraint firstAttribute="trailing" secondItem="ZV4-Sb-r5U" secondAttribute="trailing" id="x7O-06-Ruc"/>
                                                             <constraint firstItem="ZV4-Sb-r5U" firstAttribute="leading" secondItem="zuo-Nu-R5f" secondAttribute="leading" id="z7H-e3-VBM"/>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JA3-Dz-SKW">
-                                                        <rect key="frame" x="0.0" y="93" width="325" height="100"/>
+
+                                                        <rect key="frame" x="0.0" y="57.5" width="375" height="100"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67j-jQ-JIx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="WZR-UY-6MY"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                                <state key="normal" title="★ Add to Favorites">
-                                                                    <color key="titleColor" red="0.40000000000000002" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+
+                                                                <state key="normal" title="Add to Favorites">
+                                                                    <color key="titleColor" red="0.40000000000000002" green="0.078431372549019607" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="addToFavorites:" destination="17M-fC-sGZ" eventType="touchUpInside" id="h6X-2R-QVI"/>
@@ -324,7 +332,8 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="reserve:" destination="17M-fC-sGZ" eventType="touchUpInside" id="eyH-gK-Ciu"/>
+
+                                                                    <action selector="reserveRoom:" destination="17M-fC-sGZ" eventType="touchUpInside" id="yfm-Cm-bx2"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -371,7 +380,7 @@
                         <viewLayoutGuide key="safeArea" id="oEC-ba-Nzp"/>
                     </view>
                     <connections>
-                        <outlet property="roomAmenities" destination="ZV4-Sb-r5U" id="TMe-Qh-v09"/>
+                        <outlet property="roomDescription" destination="ZV4-Sb-r5U" id="Ma1-Nw-EHc"/>
                         <outlet property="roomImage" destination="XTB-hr-Fkw" id="fXV-5P-fEb"/>
                         <segue destination="pml-wL-74h" kind="unwind" identifier="unwindToFirstView" unwindAction="prepareForUnwindWithSegue:" id="aOQ-d4-4kR"/>
                     </connections>
@@ -381,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="2589.5999999999999" y="-664.31784107946032"/>
         </scene>
-        <!--My Room View Controller-->
+        <!--My Reservation View Controller-->
         <scene sceneID="1qm-d9-tGZ">
             <objects>
-                <viewController id="3eO-go-DvO" customClass="MyRoomViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3eO-go-DvO" customClass="MyReservationViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fM2-J1-sEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,7 +402,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RcR-kX-pX3">
-                                        <rect key="frame" x="25" y="68" width="325" height="503"/>
+                                        <rect key="frame" x="25" y="68" width="325" height="467.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roomThree" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-lh-uaI">
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="300"/>
@@ -402,34 +411,27 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fjM-d4-s46">
-                                                <rect key="frame" x="0.0" y="320" width="325" height="63"/>
+                                                <rect key="frame" x="0.0" y="320" width="325" height="27.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M83-1t-OdP">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="XXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5a-Nt-C2D" userLabel="Room Description">
                                                         <rect key="frame" x="0.0" y="0.0" width="325" height="27.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="XXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5a-Nt-C2D">
-                                                        <rect key="frame" x="0.0" y="35.5" width="325" height="27.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="M83-1t-OdP" firstAttribute="leading" secondItem="fjM-d4-s46" secondAttribute="leading" id="1pF-9I-tAl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="M83-1t-OdP" secondAttribute="trailing" id="2xQ-Ky-bti"/>
                                                     <constraint firstItem="Y5a-Nt-C2D" firstAttribute="leading" secondItem="fjM-d4-s46" secondAttribute="leading" id="Ewv-3V-Rlp"/>
                                                     <constraint firstAttribute="trailing" secondItem="Y5a-Nt-C2D" secondAttribute="trailing" id="ymg-6v-xQ2"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-aE-Qz3">
-                                                <rect key="frame" x="0.0" y="403" width="325" height="100"/>
+                                                <rect key="frame" x="0.0" y="367.5" width="325" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHv-4d-buc">
                                                         <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+
+                                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="KpE-WE-etd"/>
                                                         </constraints>
@@ -578,13 +580,13 @@
         <!--Reservations-->
         <scene sceneID="Ivh-xL-6aq">
             <objects>
-                <tableViewController id="AGn-rd-0tE" customClass="MyRoomsTableViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AGn-rd-0tE" customClass="MyReservationsTableViewController" customModule="FHU_Reserve" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iur-MA-Wh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReservedRoomCell" rowHeight="134" id="3hV-TY-CkF" customClass="MyRoomsTableViewCell" customModule="FHU_Reserve" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReservedRoomCell" rowHeight="134" id="3hV-TY-CkF" customClass="MyReservationTableViewCell" customModule="FHU_Reserve" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3hV-TY-CkF" id="q3z-du-oIS">
@@ -639,6 +641,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Reservations" id="GiQ-m6-4Ej"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2i1-vI-NUF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5a-6P-7mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
