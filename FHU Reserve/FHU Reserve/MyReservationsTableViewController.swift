@@ -15,6 +15,7 @@ class MyReservationsTableViewController: UITableViewController {
 
     var reservations: [Reservation]?
     var dateFormatter = DateFormatter()
+    var reservationFormatter = DateFormatter()
     var provider: MoyaProvider<FhuReserve>?
 
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class MyReservationsTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         self.dateFormatter.timeStyle = DateFormatter.Style.none
         self.dateFormatter.dateStyle = DateFormatter.Style.long
+        self.reservationFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         if provider == nil {
             provider = MoyaProvider<FhuReserve>()
         }
@@ -52,10 +54,12 @@ class MyReservationsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         let dates = reservations?.grouped(by: { (reservation: Reservation) -> String in
-            return dateFormatter.string(from: reservation.startTime)
+            let startTimeDate = reservationFormatter.date(from: reservation.startTime!)
+            let startTimeString = dateFormatter.string(from: startTimeDate!)
+            return startTimeString
         })
         let keys = Array(dates!.keys)
-        let key = keys[section]
+        let key = keys[3]
         return dates![key]!.count
     }
 
@@ -68,11 +72,13 @@ class MyReservationsTableViewController: UITableViewController {
             let reservation = reservations![indexPath.section]
             let room = reservation.room
             
-            if let roomName = room.roomName{
+            if let roomName = room?.roomName{
                 reservedRoomCell.roomNumber.text = roomName
             }
-            reservedRoomCell.time.text = dateFormatter.string(from: reservation.startTime)
-            if let imageUrl = room.imageUrl{
+            let startTimeDate = reservationFormatter.date(from: reservation.startTime!)
+            let startTimeString = dateFormatter.string(from: startTimeDate!)
+            reservedRoomCell.time.text = startTimeString
+            if let imageUrl = room?.imageUrl{
                 Alamofire.request(imageUrl).responseImage { response in
                     if let image = response.result.value {
                         reservedRoomCell.roomImage?.image = image
@@ -92,10 +98,12 @@ class MyReservationsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let dates = reservations?.grouped(by: { (reservation: Reservation) -> String in
-            return dateFormatter.string(from: reservation.startTime)
+            let startTimeDate = reservationFormatter.date(from: reservation.startTime!)
+            let startTimeString = dateFormatter.string(from: startTimeDate!)
+            return startTimeString
         })
         let keys = Array(dates!.keys)
-        return keys[section]
+        return keys[3]
     }
     
 
@@ -175,7 +183,9 @@ class MyReservationsTableViewController: UITableViewController {
                     let cell = sender as? UITableViewCell{
                     if let indexPath = tableView.indexPath(for: cell) {
                         let groupedReservations = reservations?.grouped(by: { (reservation: Reservation) -> String in
-                            return dateFormatter.string(from: reservation.startTime)
+                            let startTimeDate = reservationFormatter.date(from: reservation.startTime!)
+                            let startTimeString = dateFormatter.string(from: startTimeDate!)
+                            return startTimeString
                         })
                         let keys = Array(groupedReservations!.keys)
                         let key = keys[indexPath.section]

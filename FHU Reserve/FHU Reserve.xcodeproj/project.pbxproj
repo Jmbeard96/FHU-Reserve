@@ -20,7 +20,6 @@
 		7171DD101FBB7D4700B3E5FF /* AvailableRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */; };
 		7171DD121FBB855700B3E5FF /* AvailableRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD111FBB855700B3E5FF /* AvailableRoomTableViewCell.swift */; };
 		717D38481FBE58500064EEC1 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D38471FBE58500064EEC1 /* RoomViewController.swift */; };
-		717D38501FBF8DAD0064EEC1 /* MyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D384F1FBF8DAD0064EEC1 /* MyRooms.swift */; };
 		717D38521FBFB64C0064EEC1 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D38511FBFB64C0064EEC1 /* MyReservationViewController.swift */; };
 		71A33AEE1FB25A6900447232 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A33AED1FB25A6900447232 /* SearchViewController.swift */; };
 		71A4A7C71FAE72EA000C9A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A4A7C61FAE72EA000C9A80 /* AppDelegate.swift */; };
@@ -43,7 +42,6 @@
 		7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableRoomsTableViewController.swift; sourceTree = "<group>"; };
 		7171DD111FBB855700B3E5FF /* AvailableRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableRoomTableViewCell.swift; sourceTree = "<group>"; };
 		717D38471FBE58500064EEC1 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		717D384F1FBF8DAD0064EEC1 /* MyRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRooms.swift; sourceTree = "<group>"; };
 		717D38511FBFB64C0064EEC1 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
 		71A33AED1FB25A6900447232 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		71A4A7C31FAE72EA000C9A80 /* FHU Reserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Reserve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +138,6 @@
 				530B11F81FD9EBC000B2A89D /* MyReservationsTableViewController.swift */,
 				530B12031FDA153C00B2A89D /* MyReservationTableViewCell.swift */,
 				717D38511FBFB64C0064EEC1 /* MyReservationViewController.swift */,
-				717D384F1FBF8DAD0064EEC1 /* MyRooms.swift */,
 				7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */,
 				717D38471FBE58500064EEC1 /* RoomViewController.swift */,
 				71A33AED1FB25A6900447232 /* SearchViewController.swift */,
@@ -300,7 +297,6 @@
 				7171DD101FBB7D4700B3E5FF /* AvailableRoomsTableViewController.swift in Sources */,
 				530B11FB1FD9EE8800B2A89D /* AvailableRoomQueryResult.swift in Sources */,
 				7171DD121FBB855700B3E5FF /* AvailableRoomTableViewCell.swift in Sources */,
-				717D38501FBF8DAD0064EEC1 /* MyRooms.swift in Sources */,
 				530B12001FDA0F7300B2A89D /* Array.swift in Sources */,
 				71A4A7C71FAE72EA000C9A80 /* AppDelegate.swift in Sources */,
 				530B11F71FD8A9DD00B2A89D /* FhuReserve.swift in Sources */,
