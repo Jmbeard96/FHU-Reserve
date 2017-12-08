@@ -24,13 +24,21 @@ class MyReservationViewController: UIViewController {
             navigationItem.title = roomName
         }
         
+        let reservationFormatter = DateFormatter()
         let dateFormatter = DateFormatter()
+        reservationFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let startTimeDate = reservationFormatter.date(from: (reservation?.startTime!)!)
+        let endTimeDate = reservationFormatter.date(from: (reservation?.endTime!)!)
+        
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        let endTimeString = dateFormatter.string(from: reservation!.endTime)
-        reserveTime.text = "Reserved for \(endTimeString)"
+        let startTimeString = dateFormatter.string(from: startTimeDate!)
+        let endTimeString = dateFormatter.string(from: endTimeDate!)
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        reserveTime.text = "Reserved for \(startTimeString) - \(endTimeString)"
         
-        roomAmenities.text = reservation?.room.description
+        roomAmenities.text = reservation?.room?.description
         if let imageUrl = room?.imageUrl{
             Alamofire.request(imageUrl).responseImage { response in
                 if let image = response.result.value {

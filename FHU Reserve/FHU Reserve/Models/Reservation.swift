@@ -11,14 +11,14 @@ import ObjectMapper
 
 public class Reservation : Mappable {
     
-    var roomId: Int
-    var room: Room
-    var reserverId: Int
-    var confirmationCode: String
-    var startTime: Date
-    var endTime: Date
+    var roomId: Int?
+    var room: Room?
+    var reserverId: Int?
+    var confirmationCode: String?
+    var startTime: String?
+    var endTime: String?
     
-    public init(roomId: Int, room: Room, reserverId: Int, confirmationCode: String, startTime: Date, endTime: Date){
+    public init(roomId: Int, room: Room, reserverId: Int, confirmationCode: String, startTime: String, endTime: String){
         self.roomId = roomId
         self.room = room
         self.reserverId = reserverId
@@ -37,12 +37,12 @@ public class Reservation : Mappable {
     }
     
     public required init?(map: Map) {
-        roomId = map["roomId"].value()!
-        room = map["room"].value()!
+        roomId = map["roomId"].value()
+        room = map["room"].value()
         reserverId = map["reserverId"].value()!
-        confirmationCode = map["confirmationCode"].value()!
-        startTime = map["startTime"].value()!
-        endTime = map["endTime"].value()!
+        confirmationCode = map["confirmationCode"].value()
+        startTime = map["startTime"].value()
+        endTime = map["endTime"].value()
     }
 
 }
