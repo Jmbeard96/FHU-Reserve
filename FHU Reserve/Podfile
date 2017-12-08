@@ -11,4 +11,5 @@ target 'FHU Reserve' do
   pod 'Moya-ObjectMapper'
   pod 'Moya'
   pod 'SwiftyJSON'
+  pod 'AlamofireImage'
 end

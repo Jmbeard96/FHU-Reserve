@@ -11,8 +11,9 @@ import UIKit
 class AvailableRoomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var roomImage: UIImageView!
-    @IBOutlet weak var roomNumber: UILabel!
-
+    @IBOutlet weak var roomName: UILabel!
+    @IBOutlet weak var roomDescription: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

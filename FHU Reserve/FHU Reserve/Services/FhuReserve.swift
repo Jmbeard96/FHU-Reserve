@@ -11,12 +11,13 @@ import Moya
 
 enum FhuReserve {
     case showRoom(id: Int)
-    case reserveRoom(reserverId: Int, roomId: Int, startTime: Date, endTime: Date)
+    case reserveRoom(reserverId: Int, roomId: Int, startTime: String, endTime: String)
     case favoriteRoom(id: Int, userId: Int)
     case unFavoriteRoom(id: Int, userId: Int)
-    case search(locationId: Int, capacity: Int, durationHours: Int, searchDate: Date)
+    case search(locationId: Int, capacity: Int, durationHours: Int, searchDate: String)
     case searchRoom(roomId: Int, durationHours: Int, searchDate: Date)
     case cancelReservation(reservationId: Int)
+    case getReservations(reserverId: Int)
 }
 
 extension FhuReserve : TargetType {
@@ -26,16 +27,18 @@ extension FhuReserve : TargetType {
         switch self {
         case .showRoom(let id):
             return "/room/\(id)"
+        case .getReservations(_):
+            return "/reservations"
         case .reserveRoom(_, _, _, _):
             return "/reservations"
         case .favoriteRoom(let id, _):
             return "/rooms/\(id)/"
         case .unFavoriteRoom(let id, _):
             return "/rooms/\(id)"
-        case .search(let locationId, let capacity, let durationHours, let searchDate):
-            return "/schedules/search?locationId=\(locationId)&capacity\(capacity)=&durationHours=\(durationHours)&searchDate=\(searchDate.description)"
-        case .searchRoom(let roomId, let durationHours, let searchDate):
-            return "/rooms/search?roomId=\(roomId)&durationHours=\(durationHours)&searchDate=\(searchDate.description)"
+        case .search(_, _, _, _):
+            return "/schedules/search"
+        case .searchRoom(_, _, _):
+            return "/rooms/search"
         case .cancelReservation(let reservationId):
             return "/reservations/\(reservationId)"
         }
@@ -43,7 +46,7 @@ extension FhuReserve : TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .showRoom, .search, .searchRoom:
+        case .showRoom, .search, .searchRoom, .getReservations:
             return .get
         case .reserveRoom, .favoriteRoom, .unFavoriteRoom:
             return .post
@@ -66,6 +69,8 @@ extension FhuReserve : TargetType {
             return .requestParameters(parameters: ["locationId": locationId, "capacity": capacity, "durationHours": durationHours, "searchDate": searchDate], encoding: URLEncoding.queryString)
         case let .searchRoom(roomId, durationHours, searchDate):
             return .requestParameters(parameters: ["roomId": roomId, "durationHours": durationHours, "searchDate": searchDate], encoding: URLEncoding.queryString)
+        case let .getReservations(reserverId):
+            return .requestParameters(parameters: ["reserverId": reserverId], encoding: URLEncoding.queryString)
         case let .favoriteRoom(_, userId):
             return .requestParameters(parameters: ["userId": userId], encoding: JSONEncoding.default)
         case let .unFavoriteRoom(_, userId):
@@ -87,4 +92,5 @@ private extension String {
         return data(using: .utf8)!
     }
 }
+
 

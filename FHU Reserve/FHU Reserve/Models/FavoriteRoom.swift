@@ -10,21 +10,21 @@ import Foundation
 import ObjectMapper
 
 public class FavoriteRoom : Mappable {
-    public init?(map: Map) {
-        
-    }
     
-    init(userId: Int, roomId: Int) {
+    public init(userId: Int, roomId: Int) {
         self.userId = userId
         self.roomId = roomId
     }
     
     public func mapping(map: Map) {
-        
+        userId <- map["userId"]
+        roomId <- map["roomId"]
+    }
+    public required init?(map: Map) {
+        userId = map["userId"].value()!
+        roomId = map["roomId"].value()!
     }
     
     var userId: Int
     var roomId: Int
-    var room: Room
-    
 }
