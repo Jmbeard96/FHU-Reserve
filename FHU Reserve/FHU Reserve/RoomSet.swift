@@ -10,7 +10,7 @@ import Foundation
 
 public class RoomSet{
     
-    static var roomsForTimes: [[Room]] = [[]]
+    static var roomsForTimes: [Room] = []
 
     
 }
