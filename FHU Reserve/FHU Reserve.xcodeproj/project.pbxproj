@@ -18,7 +18,6 @@
 		715683231FDC9F020016D1EA /* FakeFavoriteRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715683221FDC9F020016D1EA /* FakeFavoriteRoom.swift */; };
 		715683251FDC9FF50016D1EA /* FavoritesSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715683241FDC9FF50016D1EA /* FavoritesSet.swift */; };
 		7171DD0A1FBA549800B3E5FF /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD091FBA549800B3E5FF /* Room.swift */; };
-		7171DD0C1FBA65C600B3E5FF /* RoomSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */; };
 		7171DD101FBB7D4700B3E5FF /* AvailableRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */; };
 		7171DD121FBB855700B3E5FF /* AvailableRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171DD111FBB855700B3E5FF /* AvailableRoomTableViewCell.swift */; };
 		717D38481FBE58500064EEC1 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D38471FBE58500064EEC1 /* RoomViewController.swift */; };
@@ -45,7 +44,6 @@
 		715683221FDC9F020016D1EA /* FakeFavoriteRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFavoriteRoom.swift; sourceTree = "<group>"; };
 		715683241FDC9FF50016D1EA /* FavoritesSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSet.swift; sourceTree = "<group>"; };
 		7171DD091FBA549800B3E5FF /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSet.swift; sourceTree = "<group>"; };
 		7171DD0F1FBB7D4600B3E5FF /* AvailableRoomsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableRoomsTableViewController.swift; sourceTree = "<group>"; };
 		7171DD111FBB855700B3E5FF /* AvailableRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableRoomTableViewCell.swift; sourceTree = "<group>"; };
 		717D38471FBE58500064EEC1 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				530B11F81FD9EBC000B2A89D /* MyReservationsTableViewController.swift */,
 				530B12031FDA153C00B2A89D /* MyReservationTableViewCell.swift */,
 				717D38511FBFB64C0064EEC1 /* MyReservationViewController.swift */,
-				7171DD0B1FBA65C600B3E5FF /* RoomSet.swift */,
 				717F30CD1FDC9A670082B61F /* FavoritesTableViewController.swift */,
 				717D38471FBE58500064EEC1 /* RoomViewController.swift */,
 				71A33AED1FB25A6900447232 /* SearchViewController.swift */,
@@ -321,7 +318,6 @@
 				715683231FDC9F020016D1EA /* FakeFavoriteRoom.swift in Sources */,
 				717D38521FBFB64C0064EEC1 /* MyReservationViewController.swift in Sources */,
 				717F30D21FDC9AF90082B61F /* FavoritesViewController.swift in Sources */,
-				7171DD0C1FBA65C600B3E5FF /* RoomSet.swift in Sources */,
 				71A33AEE1FB25A6900447232 /* SearchViewController.swift in Sources */,
 				717D38481FBE58500064EEC1 /* RoomViewController.swift in Sources */,
 				530B11FD1FD9F6A900B2A89D /* Reservation.swift in Sources */,
